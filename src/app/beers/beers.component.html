@@ -1,5 +1,7 @@
 <div *ngIf="hasServerResponded">
-  <div *ngFor="let beer of beers">
-    {{ beer.name }}
-  </div>
+  <ul class="list-inline">
+    <li class="list-inline-item" *ngFor="let beer of beers">
+        {{ beer.name }} ({{ beer.tagline }})
+    </li>
+  </ul>
 </div>
