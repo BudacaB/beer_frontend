@@ -1,7 +1,9 @@
 <div *ngIf="hasServerResponded">
   <ul class="list-inline">
     <li class="list-inline-item" *ngFor="let beer of beers">
-        {{ beer.name }} ({{ beer.tagline }})
+      <strong>{{ beer.name }}</strong> (<span>{{ beer.tagline }}</span>)
+        <img src="{{ beer.image_url }}" width=35px height=100px>
+        <!-- <img class="image" src="{{ beer.image_url }}"> -->
     </li>
   </ul>
 </div>
