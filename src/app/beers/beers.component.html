@@ -1,9 +1,12 @@
 <div *ngIf="hasServerResponded">
   <ul class="list-inline">
     <li class="list-inline-item" *ngFor="let beer of beers">
-      <strong>{{ beer.name }}</strong> (<span>{{ beer.tagline }}</span>)
-        <img src="{{ beer.image_url }}" width=35px height=100px>
-        <!-- <img class="image" src="{{ beer.image_url }}"> -->
+      <div class="card text-center bg-info mb-3" style="max-height: 15rem" id="frame">
+        <img class="card-img-top" src="{{ beer.image_url }}" width=35px height=100px>
+        <div class="card-body">
+          <h5 class="card-title"><strong>{{ beer.name }}</strong></h5> (<span class="card-text" id="tagline">{{ beer.tagline }}</span>)
+        </div>
+      </div> 
     </li>
   </ul>
 </div>
