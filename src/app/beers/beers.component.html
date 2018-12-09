@@ -1,12 +1,26 @@
 <div *ngIf="hasServerResponded">
   <ul class="list-inline">
-    <li class="list-inline-item" *ngFor="let beer of beers">
-      <div class="card text-center bg-info mb-3" style="max-height: 15rem" id="frame">
-        <img class="card-img-top" src="{{ beer.image_url }}" width=35px height=100px>
-        <div class="card-body">
-          <h5 class="card-title"><strong>{{ beer.name }}</strong></h5> (<span class="card-text" id="tagline">{{ beer.tagline }}</span>)
+    <li class="list-inline-item" *ngFor="let attenuation_level of attenuations">
+        <input type="radio" (click)="filterThisAttenuation(attenuation_level)" name="attenuation">
+        {{ attenuation_level }}
+    </li>
+  </ul>
+  <input type="radio" (click)="clearSelection()" name="reset">
+  <label for="reset">Reset</label>
+  
+   
+
+  <ul class="list-inline">
+    <li class="list-inline-item pl-1" *ngFor="let beer of filteredBeers">
+      <div class="row">
+        <div class="col-xs-3 bg-danger">
+          <img class="card-img-top" src="{{ beer.image_url }}">
         </div>
-      </div> 
+        <div class="col-xs-9 bg-info card-body">
+          <h5 class="card-title"><strong>{{ beer.name }}</strong></h5> 
+          (<span class="card-text" id="tagline">{{ beer.tagline }}</span>)
+        </div>
+      </div>
     </li>
   </ul>
 </div>

@@ -1,6 +1,7 @@
 img {
-    max-width:100%;
-    max-height:100%;
+    max-width:35px;
+    max-height:100px;
+    min-height:100px;
 }
 
 #tagline {
@@ -11,4 +12,9 @@ img {
 #frame {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.card-body {
+    max-width: 300px;
+    height: 100px;
 }
