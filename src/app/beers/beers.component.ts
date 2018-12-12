@@ -23,7 +23,8 @@ export class BeersComponent implements OnInit {
         this.filteredBeers = this.allBeers;
         console.log('remaining: ', this.allBeers.length )
         this.allBeers.sort(this.beersByName);
-        this.attenuations = this.allBeers.map(this.selectOnlyAttenuations).sort()
+        this.attenuations = this.allBeers.map(this.selectOnlyAttenuations)
+        .sort((a,b) => a - b).filter((v, i, a) => a.indexOf(v) === i)
         this.hasServerResponded = true;
       }
     )
