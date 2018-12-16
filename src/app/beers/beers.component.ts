@@ -10,7 +10,6 @@ export class BeersComponent implements OnInit {
 
   allBeers: Array<any>;
   filteredBeers: Array<any>;
-  attenuations: Array<number>;
   hasServerResponded: boolean = false;
 
   constructor(private beersService: BeersService) { }
@@ -23,8 +22,6 @@ export class BeersComponent implements OnInit {
         this.filteredBeers = this.allBeers;
         console.log('remaining: ', this.allBeers.length )
         this.allBeers.sort(this.beersByName);
-        this.attenuations = this.allBeers.map(this.selectOnlyAttenuations)
-        .sort((a,b) => a - b).filter((v, i, a) => a.indexOf(v) === i)
         this.hasServerResponded = true;
       }
     )
@@ -32,15 +29,8 @@ export class BeersComponent implements OnInit {
 
   beersByName = (firstObj, secondObj) => firstObj.name.localeCompare(secondObj.name);
 
-  selectOnlyAttenuations = beer => beer.attenuation_level;
-  
-  filterThisAttenuation(level) {
-    this.filteredBeers = this.allBeers.filter(beer => beer.attenuation_level === level);
-    console.log('remaining: ', this.allBeers.length )
-  }
-
-  clearSelection() {
-    this.filteredBeers = this.allBeers;
+  onBeersWereFilterred(filterredResult:Array<any>){
+    this.filteredBeers = filterredResult;
   }
 
 }

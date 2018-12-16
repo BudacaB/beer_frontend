@@ -18,3 +18,8 @@ img {
     max-width: 300px;
     height: 100px;
 }
+
+.list-inline li {
+    max-width: 265px;
+    margin-left: 25px
+}

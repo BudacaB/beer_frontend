@@ -1,15 +1,5 @@
 <div *ngIf="hasServerResponded">
-  <ul class="list-inline">
-    <span>Attenuation level:</span>
-    <li class="list-inline-item" *ngFor="let attenuation_level of attenuations">
-        <input type="radio" (click)="filterThisAttenuation(attenuation_level)" name="attenuation">
-        {{ attenuation_level }} 
-    </li>
-  </ul>
-  <input type="radio" (click)="clearSelection()" name="attenuation">
-  <label for="reset">Reset</label>
- 
-
+  <app-filter [allBeers]="allBeers" (action)="onBeersWereFilterred($event)" ></app-filter>
   <ul class="list-inline">
     <li class="list-inline-item pl-1" *ngFor="let beer of filteredBeers">
       <div class="row">
@@ -24,3 +14,5 @@
     </li>
   </ul>
 </div>
+
+
