@@ -1,7 +1,7 @@
 img {
     max-width:35px;
-    max-height:100px;
-    min-height:100px;
+    max-height:125px;
+    min-height:125px;
 }
 
 #tagline {
@@ -15,11 +15,12 @@ img {
 }
 
 .card-body {
-    max-width: 300px;
-    height: 100px;
+    max-width: 370px;
+    height: 165px;
 }
 
 .list-inline li {
     max-width: 265px;
-    margin-left: 25px
+    margin-left: 25px;
+    margin-top:10px;
 }
