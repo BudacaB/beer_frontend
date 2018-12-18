@@ -3,12 +3,12 @@
   <ul class="list-inline">
     <li class="list-inline-item pl-1" *ngFor="let beer of filteredBeers">
       <div class="row">
-        <div class="col-xs-4 bg-danger">
+        <div class="col-sm-3 bg-danger">
           <img class="card-img-top" src="{{ beer.image_url }}">
         </div>
-        <div class="col-xs-4 bg-info card-body">
+        <div class="col-sm-9 bg-info card-body">
           <h5 class="card-title"><strong>{{ beer.name }}</strong></h5> 
-          (<span class="card-text" id="tagline">{{ beer.tagline }}</span>)
+          <span class="card-text" id="tagline">{{ beer.tagline }}</span>
         </div>
       </div>
     </li>
