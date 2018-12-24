@@ -1,0 +1,38 @@
+img {
+    max-width:50px;
+    max-height:125px;
+    min-height:125px;
+    display:flex;
+    align-items:center;
+}
+
+#tagline {
+    font-family: 'Nosifer', cursive;
+    color: crimson;
+}
+
+#frame {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-body {
+    height: 240px;
+    text-align: center;
+}
+
+.card-img-top {
+    padding-top: 50%;
+}
+
+
+.list-inline li {
+    width: 265px;
+    margin-left: 25px;
+    margin-top:10px;
+    margin-right: 25px;
+}
+
+.card-title {
+    text-transform: uppercase
+}
