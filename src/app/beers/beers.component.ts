@@ -11,6 +11,7 @@ export class BeersComponent implements OnInit {
   allBeers: Array<any>;
   filteredBeers: Array<any>;
   hasServerResponded: boolean = false;
+  inputSearch: String = "";
 
   constructor(private beersService: BeersService) { }
 
@@ -31,6 +32,14 @@ export class BeersComponent implements OnInit {
 
   onBeersWereFilterred(filterredResult:Array<any>){
     this.filteredBeers = filterredResult;
+  }
+
+  searchedBeerName() {
+    return this.inputSearch;
+  }
+
+  onTypedText(value: String) {
+    this.inputSearch = value;
   }
 
 }

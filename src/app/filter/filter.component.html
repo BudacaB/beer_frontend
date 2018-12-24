@@ -10,5 +10,5 @@
 </div>
 
 <br>
-<label>Name:</label>
-<input type="text" required minlength="1" maxlength="40" size="20">
+<label>Filter by Name:</label>
+<input type="text" (keyup)="onKeyUp($event)" required minlength="1" maxlength="40" size="20">

@@ -10,6 +10,7 @@ export class FilterComponent implements OnInit {
 
   @Input() allBeers:Array<any> = [];
   @Output() action = new EventEmitter<Array<any>>();
+  @Output() typedText = new EventEmitter<String>();
   attenuations: Array<number>;
   selectedAttenuation: string = "All";
   
@@ -57,6 +58,10 @@ export class FilterComponent implements OnInit {
 
   storeSelection():void{
     window.localStorage.setItem("selectedAttenuation", this.selectedAttenuation)
+  }
+
+  onKeyUp(event){
+    this.typedText.emit(event.target.value);
   }
 
 }

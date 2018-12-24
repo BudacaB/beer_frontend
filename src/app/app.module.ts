@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { BeersComponent } from './beers/beers.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FilterComponent } from './filter/filter.component';
+import { FilterUserInputPipe } from './filter-user-input.pipe';
 
 
 const myRoutes: Routes = [
@@ -19,7 +20,8 @@ const myRoutes: Routes = [
     AppComponent,
     HomeComponent,
     BeersComponent,
-    FilterComponent
+    FilterComponent,
+    FilterUserInputPipe
   ],
   imports: [
     BrowserModule,
