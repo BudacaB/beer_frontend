@@ -12,7 +12,7 @@ export class FilterComponent implements OnInit {
   @Output() action = new EventEmitter<Array<any>>();
   @Output() typedText = new EventEmitter<String>();
   attenuations: Array<number>;
-  selectedAttenuation: string = "All";
+  selectedAttenuation: string;
   
   constructor() { }
 
@@ -25,7 +25,11 @@ export class FilterComponent implements OnInit {
     let lastVisitedAttenuation: string = window.localStorage.getItem("selectedAttenuation");
     if(lastVisitedAttenuation != "All"){
       let parsedAttenuation: number = parseFloat(lastVisitedAttenuation);
-      this.filterThisAttenuation(parsedAttenuation)
+      if ( isNaN(parsedAttenuation)){
+        this.clearSelection()
+      } else {
+          this.filterThisAttenuation(parsedAttenuation)
+      }
     }
   }
 
@@ -34,6 +38,7 @@ export class FilterComponent implements OnInit {
     this.selectedAttenuation = level;
     this.action.emit(this.onlyFilterredBeers(level))
     this.storeSelection();
+    console.log(level)
   }
 
   clearSelection() {

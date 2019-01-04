@@ -12,7 +12,8 @@ import { FilterUserInputPipe } from './filter-user-input.pipe';
 
 const myRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: HomeComponent }
 ]
 
 @NgModule({
