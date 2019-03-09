@@ -1,14 +1,19 @@
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Attenuation level: {{ selectedAttenuation }}
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item hand" (click)="clearSelection()">All attenuations</a>
-    <a *ngFor="let attenuation_level of attenuations" class="dropdown-item hand" 
-    (click)="filterThisAttenuation(attenuation_level)">{{ attenuation_level }} </a>
+<div class="row" id="button-wrapper">
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Attenuation level: {{ selectedAttenuation }}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item hand" (click)="clearSelection()">All attenuations</a>
+      <a *ngFor="let attenuation_level of attenuations" class="dropdown-item hand" 
+      (click)="filterThisAttenuation(attenuation_level)">{{ attenuation_level }} </a>
+    </div>
   </div>
 </div>
 
 <br>
-<label>Filter by Name:</label>
-<input type="text" (keyup)="onKeyUp($event)" required minlength="1" maxlength="40" size="20">
+
+<div class="row" id="input-wrapper">
+  <label id="filter">Filter by Name:</label>
+  <input type="text" (keyup)="onKeyUp($event)" required minlength="1" maxlength="40" size="20">
+</div>

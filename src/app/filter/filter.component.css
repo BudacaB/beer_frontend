@@ -1,3 +1,27 @@
 .hand {
     cursor: pointer;
 }
+
+button {
+    font-size: 1.3vw;
+    color: #fffde1;
+    background-color: #ff9d76;
+}
+
+#button-wrapper {
+    display: block;
+    text-align: center;
+    color: #51eaea;
+}
+
+#filter {
+    font-size: 1.3vw;
+    color: #ff9d76;
+    font-weight: bold;
+}
+
+#input-wrapper {
+    align-items: center;
+    justify-content: center
+}
+

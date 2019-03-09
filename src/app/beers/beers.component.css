@@ -1,24 +1,25 @@
 img {
     max-width:50px;
-    max-height:125px;
-    min-height:125px;
+    max-height:150px;
     display:flex;
     align-items:center;
 }
 
 #tagline {
     font-family: 'Nosifer', cursive;
-    color: crimson;
+    color: #fb3569;
+    font-size: 20px;   
 }
 
-#frame {
+/* #frame {
     margin-top: 10px;
     margin-bottom: 10px;
-}
+} */
 
 .card-body {
-    height: 240px;
+    height: 290px;
     text-align: center;
+    background-color: #51eaea;
 }
 
 .card-img-top {
@@ -34,5 +35,12 @@ img {
 }
 
 .card-title {
-    text-transform: uppercase
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #fffde1;
 }
+
+#img-box {
+    background-color: #fb3569;
+}
+

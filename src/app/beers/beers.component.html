@@ -1,19 +1,18 @@
-<div *ngIf="hasServerResponded">
-  <app-filter [allBeers]="allBeers" (action)="onBeersWereFilterred($event)" (typedText)="onTypedText($event)"></app-filter>
-  <ul class="list-inline">
-    <li class="list-inline-item pl-1" *ngFor="let beer of filteredBeers | filterUserInput:searchedBeerName()">
-      <div class="row">
-        <div class="col-sm-3 bg-danger">
-          <img class="card-img-top" src="{{ beer.image_url }}">
+<div class="row">
+  <div *ngIf="hasServerResponded">
+    <app-filter [allBeers]="allBeers" (action)="onBeersWereFilterred($event)" (typedText)="onTypedText($event)"></app-filter>
+    <ul class="list-inline">
+      <li class="list-inline-item pl-1" *ngFor="let beer of filteredBeers | filterUserInput:searchedBeerName()">
+        <div class="row">
+          <div class="col-sm-3" id="img-box">
+            <img class="card-img-top" src="{{ beer.image_url }}">
+          </div>
+          <div class="col-sm-9 bg-info card-body">
+            <h5 class="card-title"><strong>{{ beer.name }}</strong></h5> 
+              <span class="card-text" id="tagline">{{ beer.tagline }}</span>
+          </div>
         </div>
-        <div class="col-sm-9 bg-info card-body">
-          <h5 class="card-title"><strong>{{ beer.name }}</strong></h5> 
-          <span class="card-text" id="tagline">{{ beer.tagline }}</span>
-        </div>
-      </div>
-    </li>
-  </ul>
+      </li>
+    </ul>
+  </div>
 </div>
-
-
-

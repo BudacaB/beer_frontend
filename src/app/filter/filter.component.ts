@@ -23,14 +23,12 @@ export class FilterComponent implements OnInit {
           .filter(this.noDuplicates)
 
     let lastVisitedAttenuation: string = window.localStorage.getItem("selectedAttenuation");
-    if(lastVisitedAttenuation != "All"){
       let parsedAttenuation: number = parseFloat(lastVisitedAttenuation);
       if ( isNaN(parsedAttenuation)){
         this.clearSelection()
       } else {
           this.filterThisAttenuation(parsedAttenuation)
       }
-    }
   }
 
   filterThisAttenuation(level) {
